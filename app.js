@@ -23,22 +23,22 @@ app.use((req,res,next) => {
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/tours', tourRouter);
 
-app.all('*', (req, res,next) => {
+// app.all('*', (req, res,next) => {
 
 
-  // res.status(404).json({
-  //   status: 'fail',
-  //   message: `Cant find ${req.originalUrl} on the server`
-  // })
+//   // res.status(404).json({
+//   //   status: 'fail',
+//   //   message: `Cant find ${req.originalUrl} on the server`
+//   // })
 
-  // const err = new Error(`Cant find ${req.originalUrl} on the server`);
-  // err.status = 'fail';
-  // err.statusCode = 404;
+//   // const err = new Error(`Cant find ${req.originalUrl} on the server`);
+//   // err.status = 'fail';
+//   // err.statusCode = 404;
 
-  // next(err);
+//   // next(err);
 
-   next(new AppError(`Cant find ${req.originalUrl} on the server`), 404);
-});
+//    next(new AppError(`Cant find ${req.originalUrl} on the server`), 404);
+// });
 
 app.use(globalErrorHandler);
 
